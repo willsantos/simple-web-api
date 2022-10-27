@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExercicioAPIStella.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221026174213_AnotationTest")]
-    partial class AnotationTest
+    [Migration("20221026174629_NotAllowEmptyStrings")]
+    partial class NotAllowEmptyStrings
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace ExercicioAPIStella.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ExercicioAPIStella.Data.Entities.Usuario", b =>
+            modelBuilder.Entity("Wilson.WebApi.Api.Data.Entities.Usuario", b =>
                 {
                     b.Property<int>("UsuarioId")
                         .ValueGeneratedOnAdd()
