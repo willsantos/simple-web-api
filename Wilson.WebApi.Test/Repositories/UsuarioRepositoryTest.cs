@@ -11,8 +11,8 @@ namespace Wilson.WebApi.Test.Repositories;
 [TestClass]
 public class UsuarioRepositoryTest
 {
-    private readonly IUsuarioRepository _usuarioRepository;
-    private readonly IConfiguration _configuration;
+    private readonly IUsuarioRepository _repository;
+    
 
 
     public UsuarioRepositoryTest()
@@ -24,7 +24,7 @@ public class UsuarioRepositoryTest
             options => options.UseSqlServer(@"Server=127.0.0.1,1439;Database=stellaApi_tests;User=SA;Password=wd%!r$H7Ez@yuPz*sx*3wUgBcwv;")
             );
         ServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
-        _usuarioRepository = serviceProvider.GetRequiredService<IUsuarioRepository>();
+        _repository = serviceProvider.GetRequiredService<IUsuarioRepository>();
     }
 
     [TestMethod]
@@ -40,8 +40,8 @@ public class UsuarioRepositoryTest
         };
 
 
-        await _usuarioRepository.AddAsync(novoUsuario);
-        var usuarioAssert = await _usuarioRepository.FindAsync(novoUsuario.UsuarioId);
+        await _repository.AddAsync(novoUsuario);
+        var usuarioAssert = await _repository.FindAsync(novoUsuario.UsuarioId);
 
         Assert.AreEqual(usuarioAssert, novoUsuario);
     }
