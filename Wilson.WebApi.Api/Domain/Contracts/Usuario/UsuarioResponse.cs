@@ -10,12 +10,10 @@ namespace ExercicioAPIStella.Domain.Contracts.Usuario
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Nome precisa ser informado")]
         public string Nome { get; set; }
-
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Telefone precisa ser informado")]
-        public string Telefone { get; set; }
-
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Email precisa ser informado")]
-        public string Email { get; set; }
+        
+        public string? Telefone { get; set; }
+        
+        public string? Email { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "CPF precisa ser informado")]
         public string CPF { get; set; }
