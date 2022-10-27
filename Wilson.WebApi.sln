@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercicioAPIStella", "Wilson.WebApi.Api\ExercicioAPIStella.csproj", "{F7596D99-F023-4850-927E-615E1EA2098B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wilson.WebApi.Api", "Wilson.WebApi.Api\Wilson.WebApi.Api.csproj", "{F7596D99-F023-4850-927E-615E1EA2098B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
