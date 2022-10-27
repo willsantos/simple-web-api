@@ -29,21 +29,21 @@ namespace ExercicioAPIStella.Controllers
             }
         }
 
-        // GAMBIARRA PARA POPULAR BANCO DE DADOS
-        // [HttpPost]
-        // [Route("BULK")]
-        // public async Task<IActionResult> Post([FromBody] List<UsuarioRequest> usuarioRequests)
-        // {
-        //     try
-        //     {
-        //         await _usuarioService.CadastrarUsuario(usuarioRequests);
-        //         return Created("Post", "Usuarios cadastrados.");
-        //     }
-        //     catch (ArgumentException e)
-        //     {
-        //         return BadRequest(e.Message);
-        //     }
-        // }
+        //GAMBIARRA PARA POPULAR BANCO DE DADOS
+        [HttpPost]
+        [Route("BULK")]
+        public async Task<IActionResult> Post([FromBody] List<UsuarioRequest> usuarioRequests)
+        {
+            try
+            {
+                await _usuarioService.CadastrarUsuario(usuarioRequests);
+                return Created("Post", "Usuarios cadastrados.");
+            }
+            catch (ArgumentException e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
         [HttpGet]
         public async Task<IActionResult> Get()

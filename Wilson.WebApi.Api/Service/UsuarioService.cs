@@ -31,16 +31,7 @@ namespace ExercicioAPIStella.Service
         public async Task<UsuarioResponse> CadastrarUsuario(UsuarioRequest usuarioRequest)
         {
             IsValid(usuarioRequest);
-            // PESQUISAR AUTOMAPPER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            // var newUser = new Usuario()
-            // {
-            //     UsuarioId = usuarioRequest.UsuarioId,
-            //     CPF = usuarioRequest.CPF,
-            //     Email = usuarioRequest.Email,
-            //     Nome = usuarioRequest.Nome,
-            //     Senha = usuarioRequest.Senha,
-            //     Telefone = usuarioRequest.Telefone
-            // };
+           
             var novoUsuario = _mapper.Map<Usuario>(usuarioRequest);
             await _usuarioRepository.AddAsync(novoUsuario);
             return _mapper.Map<UsuarioResponse>(usuarioRequest);
